@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import './App.css';
 import axios from 'axios';
 import { SpinnerCircular } from 'spinners-react';
+import FormatDate from './FormatDate';
 
  export default function App() {
   let[weatherData, setWeatherData] = useState({ready: false});
@@ -12,7 +13,7 @@ import { SpinnerCircular } from 'spinners-react';
           temperature: Math.round(response.data.main.temp),
           humidity: response.data.main.humidity,
           wind: response.data.wind.speed,
-          date: "Sunday 20:25",
+          date: new Date(response.data.dt * 1000),
           description: response.data.weather[0].description,
         });
      }
@@ -37,7 +38,7 @@ import { SpinnerCircular } from 'spinners-react';
            <h1 className="city">{weatherData.city}</h1>
            <div className='city__info'>
             <ul>
-               <li>{weatherData.date}</li>
+               <li><FormatDate date={weatherData.date} /></li>
                <li>{weatherData.description}</li>
                <li>Humidity: {weatherData.humidity}%</li>
                <li>Wind: {weatherData.wind}km/h</li>

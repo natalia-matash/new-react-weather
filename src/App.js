@@ -1,7 +1,23 @@
+import React, { useState} from 'react';
 import './App.css';
-import WeatherInfo from './WeatherInfo';
+import axios from 'axios';
+import { SpinnerCircular } from 'spinners-react';
 
-function App() {
+ export default function App() {
+  let[weatherData, setWeatherData] = useState({ready: false});
+     function handleResponse(response){
+        setWeatherData({
+          ready: true,
+          city: response.data.name,
+          temperature: Math.round(response.data.main.temp),
+          humidity: response.data.main.humidity,
+          wind: response.data.wind.speed,
+          date: "Sunday 20:25",
+          description: response.data.weather[0].description,
+        });
+     }
+
+     if(weatherData.ready){
   return (
     <div className="App">
       <div className='container'>
@@ -16,11 +32,29 @@ function App() {
             </div>
           </div>
         </form>
-        <WeatherInfo />
+        <div className="info">
+         <div>
+           <h1 className="city">{weatherData.city}</h1>
+           <div className='city__info'>
+            <ul>
+               <li>{weatherData.date}</li>
+               <li>{weatherData.description}</li>
+               <li>Humidity: {weatherData.humidity}%</li>
+               <li>Wind: {weatherData.wind}km/h</li>
+            </ul>
+            <span>{weatherData.temperature}<sup>&deg;C</sup></span>
+           </div>
+         </div>
+      </div>
       </div>
       </div>
     </div>
   );
+     } else
+     {
+      const apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Kyiv&appid=0511a6e92a8692a228d7c70698a18f5d&units=metric`;
+      axios.get(apiUrl).then(handleResponse);
+      return <SpinnerCircular />
+     }
 }
 
-export default App;

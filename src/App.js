@@ -6,7 +6,7 @@ import Weather from './Weather'
   return(
     <div className='App'>
       <div className='container'>
-        <Weather city='Lviv' />
+        <Weather city='Kyiv' />
       </div>
     </div>
   );

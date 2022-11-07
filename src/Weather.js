@@ -16,6 +16,7 @@ import './Weather.css';
         wind: response.data.wind.speed,
         date: new Date(response.data.dt * 1000),
         description: response.data.weather[0].description,
+        iconUrl: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       });
    }
 
@@ -51,7 +52,11 @@ import './Weather.css';
      } else
      {
       search();
-      return 'Loading...'
+      return(
+        <div className="Weather">
+          <p>Loading...</p>
+        </div>
+      ); 
         
     
      }

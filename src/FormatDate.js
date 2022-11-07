@@ -1,4 +1,4 @@
-
+import React from 'react';
 
 export default function FormatDate(props){
    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday',];
@@ -8,6 +8,6 @@ export default function FormatDate(props){
    let minutes = props.date.getMinutes();
    if(minutes < 10){minutes = `0${minutes}`}
    return(
-      <div>{day}, {hours}:{minutes}</div>
+      <div>Last update: {day}, {hours}:{minutes}</div>
    );
 }

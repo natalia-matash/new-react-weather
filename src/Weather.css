@@ -1,0 +1,33 @@
+.Weather{
+   max-width: 500px;
+   margin: 40px auto;
+   padding: 20px;
+ 
+   background:  #eaf6f6;
+   border: 2px solid #bae8e8;
+   border-radius: 10px;
+ }
+ .Weather .city__info{
+   display: flex;
+   justify-content: space-between;
+   padding: 0 40px;
+ }
+ .Weather  .city{
+   padding-top: 15px;
+   color: #e46161;
+ }
+ .Weather ul{
+   padding: 0;
+   margin: 0;
+   color: #fda403;
+ }
+ .Weather li{
+   list-style: none;
+ }
+ .Weather span{
+   font-size: 60px;
+   color: #e46161;
+ }
+ .Weather sup{
+   font-size: 30px;
+ }

@@ -25,6 +25,7 @@
    list-style: none;
  }
  .Weather span{
+  padding-left: 10px;
    font-size: 60px;
    color: #e46161;
  }

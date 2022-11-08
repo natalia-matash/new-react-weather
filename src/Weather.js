@@ -2,6 +2,7 @@ import React, { useState} from 'react';
 import axios from 'axios';
 import Info from './Info';
 import './Weather.css';
+import WeatherForecast from './WeatherForecast';
 
  export default function Weather(props){
    const [city, setCity] = useState(props.city);
@@ -11,14 +12,17 @@ import './Weather.css';
       setWeatherData({
         ready: true,
         city: response.data.name,
+        coordinates: response.data.coord,
         temperature: Math.round(response.data.main.temp),
         humidity: response.data.main.humidity,
         wind: response.data.wind.speed,
         date: new Date(response.data.dt * 1000),
         description: response.data.weather[0].description,
         icon: response.data.weather[0].icon,
+        
       });
    }
+   
 
    function search(){
     let apiKey = '0511a6e92a8692a228d7c70698a18f5d';
@@ -47,6 +51,7 @@ import './Weather.css';
           </div>
         </form>
         <Info data={weatherData}/>
+        <WeatherForecast coordinates={weatherData.coordinates} />
       </div>
   );
      } else

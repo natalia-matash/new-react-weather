@@ -24,7 +24,7 @@
  .Weather li{
    list-style: none;
  }
- .Weather span{
+ .Weather .temperature{
   padding: 0 10px;
    font-size: 60px;
    color: #e46161;

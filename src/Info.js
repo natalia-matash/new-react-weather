@@ -17,7 +17,7 @@ export default function Info(props){
          <li>Wind: {props.data.wind}km/h</li>
       </ul>
       <div className='temp'>
-         <WeatherIcon code={props.data.icon}/>
+         <WeatherIcon code={props.data.icon} size={52}/>
          <WeatherTemperature celsius={props.data.temperature}/>
       </div>
      </div>

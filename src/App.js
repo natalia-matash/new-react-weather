@@ -7,7 +7,7 @@ import './App.css';
   return(
     <div className='App'>
       <div className='container'>
-        <Weather city='Kyiv' />
+        <Weather city='Lviv' />
         <footer>
           <p>This project was coded <strong>by Nataliyayaya</strong> and is <a href='https://github.com/Nataliyayaya/new-react-weather' target="_blank" without rel="noreferrer">open-sourced by GitHub</a></p>
         </footer>

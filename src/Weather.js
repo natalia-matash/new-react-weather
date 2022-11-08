@@ -54,6 +54,16 @@ import './Weather.css';
       search();
       return(
         <div className="Weather">
+           <form>
+          < div className='row'>
+            <div className='col-9'>
+            <input type="search" class="form-control" placeholder='Type your city...'/>
+            </div>
+            <div className='col-3'>
+            <input type="submit" class="btn btn-primary" value='Search'/>
+            </div>
+          </div>
+        </form>
           <p>Loading...</p>
         </div>
       ); 

@@ -25,10 +25,15 @@
    list-style: none;
  }
  .Weather span{
-  padding-left: 10px;
+  padding: 0 10px;
    font-size: 60px;
    color: #e46161;
  }
- .Weather sup{
+ .Weather sup,
+ .Weather a {
    font-size: 30px;
+   color: #e46161;
+ }
+ .Weather a:hover{
+  color: #fda403;
  }

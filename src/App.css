@@ -1,0 +1,12 @@
+.App footer{
+   text-align: center;
+}
+.App strong{
+   color: #e46161;
+}
+.App a{
+   text-decoration: none;
+}
+.App a:hover{
+   text-decoration: underline;
+}

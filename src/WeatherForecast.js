@@ -9,12 +9,28 @@ export default function WeatherForecast(props){
    function handleResponse(response){
       setForecast(response.data.list);
       setLoaded(true);
+
    }
-   if(loaded){
+   if(loaded){ console.log(forecast)
       return(
          <div className='WeatherForecast'>
             <div className='row'>
-             <WeatherForecastDay data={forecast[0]}/>    
+                        <div className='col'>
+                          <WeatherForecastDay data={forecast[4]}/>   
+                        </div> 
+                        <div className='col'>
+                          <WeatherForecastDay data={forecast[12]}/>   
+                        </div> 
+                        <div className='col'>
+                          <WeatherForecastDay data={forecast[20]}/>   
+                        </div> 
+                        <div className='col'>
+                          <WeatherForecastDay data={forecast[28]}/>   
+                        </div> 
+                        <div className='col'>
+                          <WeatherForecastDay data={forecast[36]}/>   
+                        </div> 
+
             </div>
          </div>
       )
